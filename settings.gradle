@@ -1,1 +1,1 @@
-include ':multiloader', ':multiloader-sample'
+include ':multiloader', ':multiloader-sample', ':multiloader-compiler'
