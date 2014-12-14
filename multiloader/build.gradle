@@ -1,11 +1,10 @@
-apply plugin: 'com.android.application'
+apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion 20
     buildToolsVersion "21.0.2"
 
     defaultConfig {
-        applicationId "com.hkurokawa.multiloader"
         minSdkVersion 14
         targetSdkVersion 20
         versionCode 1
