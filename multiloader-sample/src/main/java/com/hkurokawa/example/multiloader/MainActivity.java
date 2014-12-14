@@ -1,17 +1,26 @@
 package com.hkurokawa.example.multiloader;
 
 import android.app.Activity;
+import android.app.LoaderManager;
+import android.content.Loader;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.hkurokawa.multiloader.OnCreateLoader;
+
 
 public class MainActivity extends Activity {
+
+    public static final int LOADER_ID_LIST1 = 0;
+    private static final String TAG_NAME = "MainActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
     }
 
 
@@ -36,4 +45,24 @@ public class MainActivity extends Activity {
 
         return super.onOptionsItemSelected(item);
     }
+
+    @OnCreateLoader(LOADER_ID_LIST1)
+    public void onCreateList1Loader(int id, Bundle args) {
+        Log.i(TAG_NAME, "Creating a list loader.");
+    }
+
+//    @Override
+//    public Loader<Object> onCreateLoader(int id, Bundle args) {
+//        return null;
+//    }
+//
+//    @Override
+//    public void onLoadFinished(Loader<Object> loader, Object data) {
+//
+//    }
+//
+//    @Override
+//    public void onLoaderReset(Loader<Object> loader) {
+//
+//    }
 }
