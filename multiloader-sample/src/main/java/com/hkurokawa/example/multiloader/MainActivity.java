@@ -1,6 +1,7 @@
 package com.hkurokawa.example.multiloader;
 
 import android.app.Activity;
+import android.content.Loader;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -45,8 +46,9 @@ public class MainActivity extends Activity {
     }
 
     @OnCreateLoader(LOADER_ID_LIST1)
-    public void onCreateList1Loader(int id, Bundle args) {
+    public Loader onCreateList1Loader(int id, Bundle args) {
         Log.i(TAG_NAME, "Creating a list loader.");
+        return null;
     }
 
 //    @Override
