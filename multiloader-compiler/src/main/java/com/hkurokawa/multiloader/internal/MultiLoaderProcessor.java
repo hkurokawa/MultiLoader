@@ -23,6 +23,7 @@ import javax.tools.JavaFileObject;
 @SupportedAnnotationTypes("com.hkurokawa.multiloader.OnCreateLoader")
 @SupportedSourceVersion(SourceVersion.RELEASE_7)
 public class MultiLoaderProcessor extends AbstractProcessor {
+    public static final String SUFFIX = "$$_LOADER_";
     private Elements elementUtils;
     private Types typeUtils;
     private Filer filer;

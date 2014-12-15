@@ -84,6 +84,7 @@
     </content>
     <orderEntry type="jdk" jdkName="Android API 20 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="multiloader-compiler" exported="" />
   </component>
 </module>
 

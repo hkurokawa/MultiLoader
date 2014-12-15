@@ -1,8 +1,6 @@
 package com.hkurokawa.example.multiloader;
 
 import android.app.Activity;
-import android.app.LoaderManager;
-import android.content.Loader;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
