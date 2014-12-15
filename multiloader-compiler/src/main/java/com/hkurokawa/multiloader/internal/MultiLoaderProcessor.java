@@ -36,15 +36,18 @@ public class MultiLoaderProcessor extends AbstractProcessor {
 
     @Override
     public boolean process(Set<? extends TypeElement> annotations, RoundEnvironment roundEnv) {
-//        try {
-//            JavaFileObject jfo = filer.createSourceFile("com.hkurokawa.example.multiloader.MainActivity$$LOADER_0", Elem);
-//            Writer writer = jfo.openWriter();
-//            writer.write("");
-//            writer.flush();
-//            writer.close();
-//        } catch (IOException e) {
-//            error(typeElement, "Unable to write injector for type %s: %s", typeElement, e.getMessage());
-//        }
+//        System.out.println("Running processor [" + this + "].");
+        for (TypeElement a : annotations) {
+            try {
+                JavaFileObject jfo = filer.createSourceFile("com.hkurokawa.example.multiloader.MainActivity$$LOADER_0");
+                Writer writer = jfo.openWriter();
+                writer.write("package com.hkurokawa.example.multiloader;");
+                writer.flush();
+                writer.close();
+            } catch (IOException e) {
+                error(a, "Unable to write injector for type %s: %s", a, e.getMessage());
+            }
+        }
         return true;
     }
 
