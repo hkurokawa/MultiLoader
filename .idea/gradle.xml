@@ -10,6 +10,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/multiloader" />
+            <option value="$PROJECT_DIR$/multiloader-compiler" />
             <option value="$PROJECT_DIR$/multiloader-sample" />
           </set>
         </option>
