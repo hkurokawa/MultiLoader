@@ -1,5 +1,7 @@
 package com.hkurokawa.multiloader.internal;
 
+import com.hkurokawa.multiloader.OnCreateLoader;
+
 import java.io.IOException;
 import java.io.Writer;
 import java.util.Set;
@@ -36,8 +38,8 @@ public class MultiLoaderProcessor extends AbstractProcessor {
 
     @Override
     public boolean process(Set<? extends TypeElement> annotations, RoundEnvironment roundEnv) {
-//        System.out.println("Running processor [" + this + "].");
-        for (TypeElement a : annotations) {
+        System.out.println("Running processor [" + this + "].");
+        for (Element a : roundEnv.getElementsAnnotatedWith(OnCreateLoader.class)) {
             try {
                 JavaFileObject jfo = filer.createSourceFile("com.hkurokawa.example.multiloader.MainActivity$$LOADER_0");
                 Writer writer = jfo.openWriter();
