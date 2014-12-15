@@ -1,12 +1,14 @@
 package com.hkurokawa.example.multiloader;
 
 import android.app.Activity;
+import android.content.AsyncTaskLoader;
 import android.content.Loader;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.hkurokawa.multiloader.MultiLoader;
 import com.hkurokawa.multiloader.OnCreateLoader;
 
 
@@ -20,6 +22,11 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        try {
+            MultiLoader.inject(this, 0);
+        } catch (MultiLoader.InjectionFailureException e) {
+            e.printStackTrace();
+        }
     }
 
 
@@ -48,7 +55,12 @@ public class MainActivity extends Activity {
     @OnCreateLoader(LOADER_ID_LIST1)
     public Loader onCreateList1Loader(int id, Bundle args) {
         Log.i(TAG_NAME, "Creating a list loader.");
-        return null;
+        return new AsyncTaskLoader(this) {
+            @Override
+            public Object loadInBackground() {
+                return null;
+            }
+        };
     }
 
 //    @Override
